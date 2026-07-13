@@ -1,0 +1,211 @@
+/**
+ * Kinetic Design System — Design Tokens (Dark theme)
+ * Auto-generated from the Figma "Kinetic" and "Font (Kinetic)" variable collections.
+ * Every value maps 1:1 to a Figma variable so code output matches Dev Mode / MCP.
+ * Naming: figma "group/name" -> CSS custom property "--kinetic-group-name".
+ */
+:root {
+  /* ---- Neutral / base ---- */
+  --kinetic-neutral-white: #ffffff;
+  --kinetic-neutral-grey: #656565;
+  --kinetic-neutral-grey-green: #bfccd9;
+
+  /* ---- Backgrounds ---- */
+  --kinetic-bg-page: #0b1120;
+  --kinetic-bg-card: #131d33;
+  --kinetic-bg-surface-deep: #05070e;
+  --kinetic-bg-surface-subtle: #1b2848;
+  --kinetic-bg-surface-muted: #23345a;
+  --kinetic-bg-surface-emphasis: #2c3f6c;
+  --kinetic-bg-surface-strong: #354a7f;
+  --kinetic-bg-floating: #1f2e51;
+  --kinetic-bg-overlay: #0a0f1acc;
+  --kinetic-bg-transparent: #00000000;
+
+  /* ---- Text ---- */
+  --kinetic-text-primary: #f1f5f9;
+  --kinetic-text-secondary: #cbd5e1;
+  --kinetic-text-secondary-strong: #e2eaf0;
+  --kinetic-text-tertiary: #afbccd;
+  --kinetic-text-muted: #94a3b8;
+  --kinetic-text-decor: #475569;
+  --kinetic-text-placeholder: #64748b;
+  --kinetic-text-disabled: #475569d9;
+  --kinetic-text-disabled-subtle: #334155;
+  --kinetic-text-inverse: #0f172a;
+  --kinetic-text-interactive: var(--kinetic-accent-interactive);
+
+  /* ---- Icons ---- */
+  --kinetic-icon-primary: #f1f5f9;
+  --kinetic-icon-secondary: #cbd5e1;
+  --kinetic-icon-tertiary: #94a3b8;
+  --kinetic-icon-disabled: #47556966;
+  --kinetic-icon-disabled-strong: #47556999;
+  --kinetic-icon-inverse: #0f172a;
+  --kinetic-icon-interactive: var(--kinetic-accent-interactive);
+
+  /* ---- Lines / borders ---- */
+  --kinetic-lines-hairline: #94a3b814;
+  --kinetic-lines-card: #94a3b82e;
+  --kinetic-lines-section: #94a3b859;
+  --kinetic-border-default: #94a3b840;
+  --kinetic-border-active: #6366f1b2;
+  --kinetic-border-disabled: #94a3b81a;
+
+  /* ---- Brand / accent ---- */
+  --kinetic-brand-primary: #ee6d0b;
+  --kinetic-brand-primary-soft: #db833b;
+  --kinetic-accent-interactive: #6366f1;
+  --kinetic-accent-interactive-soft: #818cf8;
+  --kinetic-accent-secondary: #06b6d4;
+  --kinetic-accent-secondary-soft: #a5f3fc;
+  --kinetic-accent-indigo-cta-2: #1e40af;
+
+  /* ---- Semantic ---- */
+  --kinetic-semantic-success: #10b981;
+  --kinetic-semantic-success-soft: #6ee7b7;
+  --kinetic-semantic-warning: #f59e0b;
+  --kinetic-semantic-warning-soft: #fde68a;
+  --kinetic-semantic-error: #ef4444;
+  --kinetic-semantic-error-soft: #fca5a5;
+  --kinetic-semantic-info: var(--kinetic-deprecated-blue);
+
+  /* ---- States ---- */
+  --kinetic-state-hover: #ffffff0d;
+  --kinetic-state-active: #ffffff17;
+  --kinetic-state-focus: #6366f133;
+  --kinetic-state-selected: #6366f133;
+  --kinetic-state-selected-subtle: #6366f11a;
+  --kinetic-state-selected-grey: #94a3b81f;
+  --kinetic-state-disabled: #ffffff08;
+  --kinetic-state-highlight: #f59e0b47;
+
+  /* ---- Controls ---- */
+  --kinetic-control-thumb: #ffffff;
+  --kinetic-control-thumb-muted: #cbd5e1;
+  --kinetic-control-track: #ffffff33;
+  --kinetic-control-track-disabled: #ffffff1a;
+  --kinetic-control-segment: #0a0f1a;
+  --kinetic-control-segment-hover: #ffffff14;
+
+  /* ---- Scroll ---- */
+  --kinetic-scroll-default: #ffffff40;
+  --kinetic-scroll-muted: #ffffff1f;
+
+  /* ---- Context ---- */
+  --kinetic-context-icon: #cbd5e1;
+  --kinetic-context-button: #cbd5e1;
+  --kinetic-context-button-bg: #ffffff0d;
+  --kinetic-context-tab-inactive: #94a3b8;
+  --kinetic-context-tab-active: #f1f5f9;
+
+  /* ---- Overlays ---- */
+  --kinetic-overlay-table-row-hover-brand: #ee6d0b0f;
+  --kinetic-overlay-table-row-hover-interactive: #6366f10f;
+  --kinetic-overlay-ghost-pill-bg-brand: #ee6d0b1a;
+  --kinetic-overlay-ghost-pill-bg-interactive: #6366f11a;
+  --kinetic-overlay-filter-bar-bg: #0f172ad9;
+  --kinetic-overlay-filter-bar-border-brand: #ee6d0b2e;
+  --kinetic-overlay-filter-bar-border-interactive: #6366f12e;
+  --kinetic-overlay-select-border-brand: #ee6d0b40;
+  --kinetic-overlay-select-border-hover-brand: #ee6d0b8c;
+  --kinetic-overlay-select-border-interactive: #6366f140;
+  --kinetic-overlay-select-border-hover-interactive: #6366f18c;
+  --kinetic-overlay-guide-example-bg: #0f172a66;
+
+  /* ---- Categories / rating / priority / markers ---- */
+  --kinetic-category-a-solid: #1d4ed8;
+  --kinetic-category-a-chart: #3b82f6;
+  --kinetic-category-b-solid: #9333ea;
+  --kinetic-category-b-chart: #c084fc;
+  --kinetic-category-c-solid: #0f766e;
+  --kinetic-category-c-chart: #5eead4;
+  --kinetic-rating-positive: #047857;
+  --kinetic-rating-caution: #b45309;
+  --kinetic-rating-negative: #b91c1c;
+  --kinetic-priority-critical: #ff4332;
+  --kinetic-priority-high: #ee722a;
+  --kinetic-priority-medium: #fecc32;
+  --kinetic-priority-low: #a8ce00;
+  --kinetic-priority-minimal: #1dc22b;
+  --kinetic-marker-red: #ff031b;
+  --kinetic-marker-orange: #ff9b28;
+  --kinetic-marker-yellow: #ffff37;
+  --kinetic-marker-green: #007416;
+  --kinetic-marker-blue: #53a6cd;
+
+  /* ---- Tables ---- */
+  --kinetic-table-row-even: #111a30;
+  --kinetic-table-row-odd: #0f172b;
+  --kinetic-table-row-even-pinned: #131c30;
+  --kinetic-table-row-odd-pinned: #172035;
+  --kinetic-table-row-hover: #1e2a45;
+  --kinetic-table-header: #0f172a;
+
+  /* ---- Deprecated (do not use in new work) ---- */
+  --kinetic-deprecated-blue: #3b82f6;
+  --kinetic-deprecated-warning-orange: #fda228;
+  --kinetic-deprecated-ana: #ff5a11;
+
+  /* ---- Radius ---- */
+  --kinetic-radius-xs: 2px;
+  --kinetic-radius-sm: 4px;
+  --kinetic-radius-md: 6px;
+  --kinetic-radius-lg: 8px;
+  --kinetic-radius-xl: 16px;
+  --kinetic-radius-card: 8px;
+  --kinetic-radius-input: 6px;
+  --kinetic-radius-pill: 3px;
+
+  /* ---- Spacing ---- */
+  --kinetic-spacing-pad-card: 24px;
+  --kinetic-spacing-pad-title: 20px;
+  --kinetic-spacing-pad-table: 16px;
+
+  /* ---- Typography ---- */
+  --kinetic-font-family-sans: "IBM Plex Sans", system-ui, sans-serif;
+  --kinetic-font-family-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --kinetic-font-size-xl: 28px;
+  --kinetic-font-size-lg: 22px;
+  --kinetic-font-size-md: 16px;
+  --kinetic-font-size-sm: 14px;
+  --kinetic-font-size-s: 13px;
+  --kinetic-font-size-meta: 11px;
+  --kinetic-font-size-cap: 10px;
+  --kinetic-font-size-label: 9px;
+  --kinetic-font-weight-400: 400;
+  --kinetic-font-weight-600: 600;
+  --kinetic-font-weight-700: 700;
+
+  /* ---- Gradients (Figma paint styles: kinetic/gradients/*) ----
+   * Aurora principle: dark bg/card base + soft Kinetic-hue splashes.
+   * Splash alpha kept low (~0.5) so foreground text stays readable. */
+  --kinetic-gradient-bg-ana:
+    /* dark core keeps white text readable */
+    radial-gradient(90% 80% at 42% 40%, rgba(5, 7, 14, 0.62) 0%, rgba(5, 7, 14, 0.28) 55%, rgba(5, 7, 14, 0) 100%),
+    /* multi-temperature aurora splashes (Kinetic hues) */
+    radial-gradient(120% 140% at 12% 15%, rgba(99, 102, 241, 0.34) 0%, rgba(99, 102, 241, 0) 55%),
+    radial-gradient(120% 140% at 20% 92%, rgba(59, 130, 246, 0.30) 0%, rgba(59, 130, 246, 0) 55%),
+    radial-gradient(120% 150% at 96% 30%, rgba(6, 182, 212, 0.30) 0%, rgba(6, 182, 212, 0) 55%),
+    radial-gradient(130% 150% at 88% 6%, rgba(129, 140, 248, 0.26) 0%, rgba(129, 140, 248, 0) 55%),
+    radial-gradient(120% 130% at 92% 96%, rgba(238, 109, 11, 0.14) 0%, rgba(238, 109, 11, 0) 55%),
+    var(--kinetic-bg-card);
+  /* Plain 2-hue user bubble: indigo -> blue diagonal over dark card */
+  --kinetic-gradient-bg-user:
+    linear-gradient(135deg, rgba(99, 102, 241, 0.34) 0%, rgba(59, 130, 246, 0.22) 100%),
+    var(--kinetic-bg-card);
+  --kinetic-gradient-bg-info:
+    radial-gradient(120% 140% at 88% 8%, rgba(59, 130, 246, 0.5) 0%, rgba(59, 130, 246, 0) 55%),
+    radial-gradient(120% 140% at 12% 12%, rgba(6, 182, 212, 0.45) 0%, rgba(6, 182, 212, 0) 55%),
+    radial-gradient(120% 150% at 95% 95%, rgba(99, 102, 241, 0.45) 0%, rgba(99, 102, 241, 0) 55%),
+    radial-gradient(130% 150% at 5% 95%, rgba(165, 243, 252, 0.35) 0%, rgba(165, 243, 252, 0) 55%),
+    var(--kinetic-bg-card);
+  --kinetic-gradient-bg-success:
+    radial-gradient(120% 140% at 88% 8%, rgba(16, 185, 129, 0.5) 0%, rgba(16, 185, 129, 0) 55%),
+    radial-gradient(120% 140% at 12% 12%, rgba(6, 182, 212, 0.45) 0%, rgba(6, 182, 212, 0) 55%),
+    radial-gradient(120% 150% at 95% 95%, rgba(110, 231, 183, 0.4) 0%, rgba(110, 231, 183, 0) 55%),
+    radial-gradient(130% 150% at 5% 95%, rgba(59, 130, 246, 0.35) 0%, rgba(59, 130, 246, 0) 55%),
+    var(--kinetic-bg-card);
+  --kinetic-gradient-action-primary: linear-gradient(90deg, #db833b 0%, #ee6d0b 100%);
+  --kinetic-gradient-action-interactive: linear-gradient(90deg, #818cf8 0%, #6366f1 100%);
+}

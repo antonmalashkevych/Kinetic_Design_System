@@ -1,0 +1,66 @@
+/**
+ * Kinetic Navigation bars — token-driven. Requires tokens/kinetic-tokens.css.
+ * App-shell surfaces on bg/card; active nav items brand orange (via nested items).
+ */
+.k-topbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 48px;
+  padding: 0 12px;
+  background: var(--kinetic-bg-card);
+  border-radius: var(--kinetic-radius-lg);
+  font-family: var(--kinetic-font-family-sans);
+  color: var(--kinetic-text-primary);
+  box-sizing: border-box;
+}
+.k-topbar__lead { display: inline-flex; align-items: center; gap: 8px; flex: 0 0 auto; }
+.k-topbar__center { flex: 1 1 auto; display: inline-flex; align-items: center; gap: 4px; min-width: 0; }
+.k-topbar__actions { display: inline-flex; align-items: center; gap: 8px; flex: 0 0 auto; }
+
+.k-nav-rail {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  width: 48px;
+  padding: 8px 4px;
+  background: var(--kinetic-bg-card);
+  border-radius: var(--kinetic-radius-lg);
+  box-sizing: border-box;
+}
+
+.k-sidebar {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 240px;
+  padding: 12px 8px;
+  background: var(--kinetic-bg-card);
+  border-radius: var(--kinetic-radius-lg);
+  box-sizing: border-box;
+  font-family: var(--kinetic-font-family-sans);
+  transition: width 140ms ease;
+}
+.k-sidebar--collapsed { width: 56px; align-items: center; padding: 12px 4px; }
+
+.k-cv-navbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 44px;
+  padding: 0 12px;
+  background: var(--kinetic-bg-card);
+  border-radius: var(--kinetic-radius-lg);
+  font-family: var(--kinetic-font-family-sans);
+  color: var(--kinetic-text-primary);
+  box-sizing: border-box;
+}
+.k-cv-navbar__back, .k-cv-navbar__chevron {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 24px; height: 24px; border: 0; background: transparent;
+  color: var(--kinetic-icon-secondary); cursor: pointer; flex: 0 0 auto;
+}
+.k-cv-navbar__back > svg, .k-cv-navbar__chevron > svg { width: 18px; height: 18px; }
+.k-cv-navbar__title { font-size: var(--kinetic-font-size-sm); font-weight: var(--kinetic-font-weight-600); }
+.k-cv-navbar__actions { margin-left: auto; display: inline-flex; align-items: center; gap: 8px; }

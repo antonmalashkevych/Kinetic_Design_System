@@ -1,0 +1,131 @@
+/* Kinetic Dropdowns (Overlays) — selection = indigo (accent/interactive) */
+
+/* ---- List item ---- */
+.k-dd-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 36px;
+  padding: 0 12px;
+  font-family: var(--kinetic-font-family-sans);
+  font-size: 14px;
+  color: var(--kinetic-text-primary);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  user-select: none;
+}
+.k-dd-item__label { flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.k-dd-item__sub { color: var(--kinetic-text-tertiary); font-size: 12px; }
+.k-dd-item--hover,
+.k-dd-item:hover { background: var(--kinetic-overlay-table-row-hover-interactive, var(--kinetic-state-hover)); }
+.k-dd-item--selected {
+  background: var(--kinetic-state-selected);
+  color: var(--kinetic-accent-interactive);
+}
+.k-dd-item--focus { outline: 2px solid var(--kinetic-border-active); outline-offset: -2px; }
+.k-dd-item--disabled { color: var(--kinetic-text-disabled); cursor: not-allowed; }
+.k-dd-item__divider { border-top: 1px solid var(--kinetic-border-subtle); }
+
+/* ---- Trigger (Dropdown / Multiselect) ---- */
+.k-dd {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 4px;
+  font-family: var(--kinetic-font-family-sans);
+}
+.k-dd__label { font-size: 12px; color: var(--kinetic-text-secondary); }
+.k-dd__control {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 36px;
+  padding: 0 10px;
+  min-width: 200px;
+  background: var(--kinetic-bg-surface-subtle);
+  border: 1px solid var(--kinetic-border-default);
+  border-radius: var(--kinetic-radius-md, 8px);
+  color: var(--kinetic-text-primary);
+  font-size: 14px;
+  cursor: pointer;
+}
+.k-dd__control--hover,
+.k-dd__control:hover { border-color: var(--kinetic-border-active); }
+.k-dd__control--focus,
+.k-dd__control--selected { border-color: var(--kinetic-accent-interactive); }
+.k-dd__control--disabled { opacity: .5; cursor: not-allowed; }
+.k-dd__placeholder { color: var(--kinetic-text-tertiary); flex: 1; }
+.k-dd__value { flex: 1; }
+.k-dd__caret { color: var(--kinetic-text-secondary); flex-shrink: 0; }
+
+/* multiselect chips */
+.k-dd__chips { display: flex; flex-wrap: wrap; gap: 4px; flex: 1; padding: 4px 0; }
+.k-dd__chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--kinetic-state-selected);
+  color: var(--kinetic-accent-interactive);
+  font-size: 12px;
+}
+
+/* ---- List container ---- */
+.k-dd-list {
+  display: flex;
+  flex-direction: column;
+  padding: 4px;
+  min-width: 220px;
+  background: var(--kinetic-bg-floating);
+  border: 1px solid var(--kinetic-border-subtle);
+  border-radius: var(--kinetic-radius-md, 8px);
+  box-shadow: var(--kinetic-shadow-lg, 0 8px 24px rgba(0,0,0,.4));
+}
+
+/* ---- Calendar ---- */
+.k-cal {
+  display: inline-block;
+  padding: 12px;
+  background: var(--kinetic-bg-floating);
+  border: 1px solid var(--kinetic-border-subtle);
+  border-radius: var(--kinetic-radius-md, 8px);
+  font-family: var(--kinetic-font-family-sans);
+}
+.k-cal__grid { display: grid; grid-template-columns: repeat(7, 32px); gap: 2px; }
+.k-cal-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--kinetic-radius-sm, 6px);
+  font-family: var(--kinetic-font-family-mono);
+  font-size: 13px;
+  color: var(--kinetic-text-primary);
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+.k-cal-cell--dayname { color: var(--kinetic-text-tertiary); font-family: var(--kinetic-font-family-sans); cursor: default; }
+.k-cal-cell--other { color: var(--kinetic-text-disabled); }
+.k-cal-cell--today { border: 1px solid var(--kinetic-accent-interactive); }
+.k-cal-cell--selected { background: var(--kinetic-accent-interactive); color: var(--kinetic-neutral-white); }
+.k-cal-cell--range { background: var(--kinetic-state-selected); color: var(--kinetic-accent-interactive); border-radius: 0; }
+.k-cal-cell:hover:not(.k-cal-cell--dayname):not(.k-cal-cell--selected) { background: var(--kinetic-state-hover); }
+
+/* ---- Time picker ---- */
+.k-time {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  background: var(--kinetic-bg-surface-subtle);
+  border: 1px solid var(--kinetic-border-default);
+  border-radius: var(--kinetic-radius-md, 8px);
+  font-family: var(--kinetic-font-family-mono);
+  font-size: 14px;
+  color: var(--kinetic-text-primary);
+}
+.k-time--active { border-color: var(--kinetic-accent-interactive); }
+.k-time__ampm { font-family: var(--kinetic-font-family-sans); color: var(--kinetic-text-secondary); font-size: 12px; }

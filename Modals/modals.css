@@ -1,0 +1,82 @@
+/* Kinetic Modals (Layouts) — primary action = brand orange CTA */
+
+.k-modal-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(5, 7, 14, 0.6);
+  z-index: 1000;
+}
+
+.k-modal {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 400px;
+  background: var(--kinetic-bg-card);
+  border: 1px solid var(--kinetic-border-subtle);
+  border-radius: var(--kinetic-radius-card, 8px);
+  box-shadow: var(--kinetic-shadow-xl, 0 16px 48px rgba(0,0,0,.5));
+  font-family: var(--kinetic-font-family-sans);
+  color: var(--kinetic-text-primary);
+  overflow: hidden;
+}
+
+.k-modal__header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 16px 0;
+}
+.k-modal__title { flex: 1; font-size: 15px; font-weight: 600; text-align: center; }
+.k-modal__close {
+  background: none; border: none; color: var(--kinetic-text-tertiary);
+  cursor: pointer; padding: 0; width: 20px; height: 20px; line-height: 1; flex-shrink: 0;
+}
+.k-modal__close:hover { color: var(--kinetic-text-primary); }
+
+.k-modal__body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px 16px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+.k-modal__desc { color: var(--kinetic-text-secondary); text-align: center; }
+.k-modal__additional { color: var(--kinetic-text-tertiary); font-size: 12px; text-align: center; }
+
+.k-modal__footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 12px 16px 16px;
+}
+.k-modal__footer--multi { justify-content: space-between; }
+
+.k-modal-btn {
+  font-family: var(--kinetic-font-family-sans);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 7px 14px;
+  border-radius: var(--kinetic-radius-input, 6px);
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+.k-modal-btn--primary {
+  background: var(--kinetic-gradient-action-primary, var(--kinetic-brand-primary));
+  color: var(--kinetic-neutral-white);
+}
+.k-modal-btn--secondary {
+  background: transparent;
+  color: var(--kinetic-text-secondary);
+  border-color: var(--kinetic-border-default);
+}
+.k-modal-btn--ghost {
+  background: transparent;
+  color: var(--kinetic-text-secondary);
+  border-color: transparent;
+}

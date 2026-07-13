@@ -1,0 +1,41 @@
+/**
+ * Kinetic Radio — token-driven. Requires tokens/kinetic-tokens.css.
+ * Selected dot + focus ring use accent/interactive (indigo).
+ */
+.k-radio {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--kinetic-font-family-sans);
+  font-size: var(--kinetic-font-size-sm);
+  color: var(--kinetic-text-primary);
+  cursor: pointer;
+  position: relative;
+}
+.k-radio__input { position: absolute; opacity: 0; width: 0; height: 0; }
+.k-radio__circle {
+  width: 16px;
+  height: 16px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  border: 1px solid var(--kinetic-border-default);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 120ms ease, box-shadow 120ms ease;
+}
+.k-radio:hover .k-radio__circle { border-color: var(--kinetic-border-active); }
+.k-radio__input:focus-visible + .k-radio__circle {
+  box-shadow: 0 0 0 3px var(--kinetic-overlay-select-border-hover-interactive);
+  border-color: var(--kinetic-border-active);
+}
+.k-radio__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--kinetic-accent-interactive);
+}
+.k-radio[data-checked='true'] .k-radio__circle { border-color: var(--kinetic-accent-interactive); }
+.k-radio[data-disabled='true'] { cursor: not-allowed; color: var(--kinetic-text-disabled); }
+.k-radio[data-disabled='true'] .k-radio__circle { border-color: var(--kinetic-border-disabled); }
+.k-radio[data-disabled='true'] .k-radio__dot { background: var(--kinetic-accent-interactive-soft); }

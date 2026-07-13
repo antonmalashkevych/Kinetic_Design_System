@@ -1,0 +1,96 @@
+/* Kinetic Notifications (Overlays) — status = semantic tokens; primary action = brand orange CTA */
+
+.k-notification {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  min-width: 320px;
+  max-width: 480px;
+  padding: 14px 16px;
+  /* soft status-tinted fill set per type below */
+  background: var(--kinetic-bg-surface-deep);
+  border: 1px solid var(--kinetic-border-default);
+  border-radius: var(--kinetic-radius-md, 8px);
+  box-shadow: var(--kinetic-shadow-lg, 0 8px 24px rgba(0,0,0,.4));
+  font-family: var(--kinetic-font-family-sans);
+  color: var(--kinetic-text-primary);
+}
+
+/* status = soft tinted gradient fill over a near-black base + tinted border + icon color */
+.k-notification--info {
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--kinetic-semantic-info) 34%, transparent), color-mix(in srgb, var(--kinetic-semantic-info) 14%, transparent)),
+    var(--kinetic-bg-surface-deep);
+  border-color: color-mix(in srgb, var(--kinetic-semantic-info) 40%, transparent);
+}
+.k-notification--success {
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--kinetic-semantic-success) 34%, transparent), color-mix(in srgb, var(--kinetic-semantic-success) 14%, transparent)),
+    var(--kinetic-bg-surface-deep);
+  border-color: color-mix(in srgb, var(--kinetic-semantic-success) 40%, transparent);
+}
+.k-notification--warning {
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--kinetic-semantic-warning) 34%, transparent), color-mix(in srgb, var(--kinetic-semantic-warning) 14%, transparent)),
+    var(--kinetic-bg-surface-deep);
+  border-color: color-mix(in srgb, var(--kinetic-semantic-warning) 40%, transparent);
+}
+.k-notification--danger {
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--kinetic-semantic-error) 34%, transparent), color-mix(in srgb, var(--kinetic-semantic-error) 14%, transparent)),
+    var(--kinetic-bg-surface-deep);
+  border-color: color-mix(in srgb, var(--kinetic-semantic-error) 40%, transparent);
+}
+
+.k-notification__icon { flex-shrink: 0; width: 20px; height: 20px; display: flex; }
+.k-notification--info .k-notification__icon { color: var(--kinetic-semantic-info); }
+.k-notification--success .k-notification__icon { color: var(--kinetic-semantic-success); }
+.k-notification--warning .k-notification__icon { color: var(--kinetic-semantic-warning); }
+.k-notification--danger .k-notification__icon { color: var(--kinetic-semantic-error); }
+
+.k-notification__body { flex: 1; display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.k-notification__title { font-size: 14px; font-weight: 600; color: var(--kinetic-text-primary); }
+.k-notification__message {
+  font-size: 13px;
+  color: var(--kinetic-text-secondary);
+  line-height: 1.4;
+}
+.k-notification--single .k-notification__message {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.k-notification__actions { display: flex; gap: 8px; margin-top: 10px; }
+.k-notification__btn {
+  font-family: var(--kinetic-font-family-sans);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: var(--kinetic-radius-sm, 6px);
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+/* primary action = brand orange CTA */
+.k-notification__btn--primary {
+  background: var(--kinetic-brand-primary);
+  color: var(--kinetic-neutral-white);
+}
+.k-notification__btn--secondary {
+  background: transparent;
+  color: var(--kinetic-text-secondary);
+  border-color: var(--kinetic-border-default);
+}
+
+.k-notification__close {
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  color: var(--kinetic-text-tertiary);
+  cursor: pointer;
+  padding: 0;
+  width: 20px;
+  height: 20px;
+  line-height: 1;
+}
+.k-notification__close:hover { color: var(--kinetic-text-primary); }

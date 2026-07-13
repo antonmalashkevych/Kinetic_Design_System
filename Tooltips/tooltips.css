@@ -1,0 +1,56 @@
+/**
+ * Kinetic Tooltips — token-driven. Requires tokens/kinetic-tokens.css.
+ */
+.k-tooltip {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 2px;
+  max-width: 280px;
+  padding: 8px 12px;
+  border-radius: var(--kinetic-radius-lg);
+  font-family: var(--kinetic-font-family-sans);
+  font-size: var(--kinetic-font-size-s);
+  color: var(--kinetic-text-primary);
+  box-shadow: var(--kinetic-shadow-md, 0 6px 16px rgba(3, 7, 18, 0.5));
+}
+.k-tooltip--surface { background: var(--kinetic-bg-card); }
+.k-tooltip--black { background: var(--kinetic-text-inverse); }
+.k-tooltip__headline { font-weight: var(--kinetic-font-weight-600); }
+
+/* Validation tooltip (modern, no caret) */
+.k-validation-tooltip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: var(--kinetic-radius-lg);
+  background: var(--kinetic-bg-floating);
+  border: 1px solid var(--kinetic-semantic-warning);
+  font-family: var(--kinetic-font-family-sans);
+  font-size: var(--kinetic-font-size-s);
+  color: var(--kinetic-text-primary);
+  box-shadow: var(--kinetic-shadow-md, 0 6px 16px rgba(3, 7, 18, 0.5));
+  max-width: 320px;
+}
+.k-validation-tooltip--error { border-color: var(--kinetic-semantic-error); }
+.k-validation-tooltip__icon {
+  flex: 0 0 auto;
+  width: 16px;
+  height: 16px;
+  color: var(--kinetic-semantic-warning);
+}
+.k-validation-tooltip--error .k-validation-tooltip__icon { color: var(--kinetic-semantic-error); }
+.k-validation-tooltip__icon > svg { width: 100%; height: 100%; }
+
+/* Info tooltip trigger */
+.k-info-tooltip {
+  position: relative;
+  display: inline-flex;
+}
+.k-info-tooltip__icon {
+  width: 16px;
+  height: 16px;
+  color: var(--kinetic-text-muted);
+  cursor: help;
+}
+.k-info-tooltip__icon > svg { width: 100%; height: 100%; }

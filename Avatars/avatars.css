@@ -1,0 +1,43 @@
+/**
+ * Kinetic Avatars — token-driven styles. Requires tokens/kinetic-tokens.css.
+ */
+.k-avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  overflow: hidden;
+  flex: 0 0 auto;
+  font-family: var(--kinetic-font-family-sans);
+  font-weight: var(--kinetic-font-weight-600);
+  color: var(--kinetic-neutral-white);
+  user-select: none;
+}
+
+/* sizes (font-size = initials size, per Figma) */
+.k-avatar--lg { width: 40px; height: 40px; font-size: 24px; }
+.k-avatar--md { width: 32px; height: 32px; font-size: 20px; }
+.k-avatar--sm { width: 24px; height: 24px; font-size: 20px; }
+
+/* types */
+.k-avatar--initials { background: var(--kinetic-brand-primary); }
+.k-avatar--placeholder {
+  background: var(--kinetic-bg-surface-subtle);
+  color: var(--kinetic-text-decor);
+}
+.k-avatar--image { background: var(--kinetic-bg-surface-subtle); }
+
+.k-avatar__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.k-avatar__initials { line-height: 1; }
+.k-avatar__placeholder {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}

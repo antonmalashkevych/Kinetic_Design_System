@@ -1,0 +1,39 @@
+/**
+ * Kinetic Breadcrumbs — token-driven. Requires tokens/kinetic-tokens.css.
+ * Links are indigo-interactive; current page is text/primary.
+ */
+.k-breadcrumbs {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--kinetic-font-family-sans);
+  font-size: var(--kinetic-font-size-s);
+  color: var(--kinetic-text-secondary);
+}
+.k-breadcrumb {
+  color: var(--kinetic-text-secondary);
+  text-decoration: none;
+  padding: 2px 6px;
+  border-radius: var(--kinetic-radius-sm);
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  font: inherit;
+  white-space: nowrap;
+  transition: background-color 120ms ease, color 120ms ease;
+}
+.k-breadcrumb:hover { background: var(--kinetic-overlay-ghost-pill-bg-interactive); color: var(--kinetic-accent-interactive); }
+.k-breadcrumb[aria-current='page'] { color: var(--kinetic-text-primary); font-weight: var(--kinetic-font-weight-600); cursor: default; }
+.k-breadcrumb[aria-current='page']:hover { background: transparent; color: var(--kinetic-text-primary); }
+.k-breadcrumb__sep { color: var(--kinetic-text-decor); display: inline-flex; align-items: center; }
+.k-breadcrumb__sep > svg { width: 14px; height: 14px; }
+.k-breadcrumb__ellipsis {
+  color: var(--kinetic-text-secondary);
+  padding: 2px 6px;
+  border-radius: var(--kinetic-radius-sm);
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  font: inherit;
+}
+.k-breadcrumb__ellipsis:hover { background: var(--kinetic-overlay-ghost-pill-bg-interactive); color: var(--kinetic-accent-interactive); }

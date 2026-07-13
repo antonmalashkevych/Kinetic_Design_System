@@ -1,0 +1,33 @@
+/**
+ * Kinetic Stepper — token-driven. Requires tokens/kinetic-tokens.css.
+ * Indigo theme: done/current = accent/interactive; inactive uses border/active
+ * (indigo @70%) so upcoming steps stay clearly readable on dark surfaces.
+ */
+.k-step { display: inline-flex; flex-direction: column; align-items: center; gap: 6px; font-family: var(--kinetic-font-family-sans); }
+.k-step__dot {
+  width: 12px;
+  height: 12px;
+  box-sizing: border-box;
+  border-radius: 50%;
+  border: 2px solid var(--kinetic-border-active);
+  background: transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--kinetic-neutral-white);
+  transition: background-color 120ms ease, border-color 120ms ease, box-shadow 120ms ease;
+}
+.k-step[data-state='done'] .k-step__dot,
+.k-step[data-state='interacted'] .k-step__dot,
+.k-step[data-state='current'] .k-step__dot {
+  background: var(--kinetic-accent-interactive);
+  border-color: var(--kinetic-accent-interactive);
+}
+.k-step[data-state='current'] .k-step__dot { box-shadow: 0 0 0 3px var(--kinetic-overlay-select-border-hover-interactive); }
+.k-step__dot > svg { width: 8px; height: 8px; }
+.k-step__label { font-size: var(--kinetic-font-size-meta); color: var(--kinetic-text-tertiary); white-space: nowrap; }
+.k-step[data-state='current'] .k-step__label { color: var(--kinetic-text-primary); font-weight: var(--kinetic-font-weight-600); }
+
+.k-stepper { display: inline-flex; align-items: center; }
+.k-stepper__connector { height: 2px; width: 40px; background: var(--kinetic-border-active); flex: 0 0 auto; margin: 5px 4px 0; }
+.k-stepper__connector[data-done='true'] { background: var(--kinetic-accent-interactive); }

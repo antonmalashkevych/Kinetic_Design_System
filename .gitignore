@@ -1,0 +1,18 @@
+# dependencies
+node_modules/
+
+# figma / code connect
+.figma/
+
+# env / secrets
+.env
+.env.*
+
+# os / editor
+.DS_Store
+*.log
+npm-debug.log*
+
+# build output
+dist/
+build/

@@ -1,0 +1,118 @@
+/**
+ * Kinetic Checkboxes — token-driven. Requires tokens/kinetic-tokens.css.
+ * Checked / indeterminate use accent/interactive (indigo); focus ring interactive.
+ */
+.k-checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--kinetic-font-family-sans);
+  font-size: var(--kinetic-font-size-s);
+  color: var(--kinetic-text-primary);
+  cursor: pointer;
+  position: relative;
+}
+.k-checkbox__input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.k-checkbox__box {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--kinetic-border-default);
+  border-radius: var(--kinetic-radius-sm);
+  color: var(--kinetic-neutral-white);
+  transition: background-color 120ms ease, border-color 120ms ease, box-shadow 120ms ease;
+}
+.k-checkbox__box > svg { width: 12px; height: 12px; }
+.k-checkbox:hover .k-checkbox__box { border-color: var(--kinetic-border-active); }
+.k-checkbox__input:focus-visible + .k-checkbox__box {
+  box-shadow: 0 0 0 3px var(--kinetic-overlay-select-border-hover-interactive);
+  border-color: var(--kinetic-border-active);
+}
+.k-checkbox[data-state='checked'] .k-checkbox__box,
+.k-checkbox[data-state='indeterminate'] .k-checkbox__box {
+  background: var(--kinetic-accent-interactive);
+  border-color: var(--kinetic-accent-interactive);
+}
+.k-checkbox[data-disabled='true'] {
+  cursor: not-allowed;
+  color: var(--kinetic-text-disabled);
+}
+.k-checkbox[data-disabled='true'] .k-checkbox__box { border-color: var(--kinetic-border-disabled); }
+.k-checkbox[data-disabled='true'][data-state='checked'] .k-checkbox__box,
+.k-checkbox[data-disabled='true'][data-state='indeterminate'] .k-checkbox__box {
+  background: var(--kinetic-accent-interactive-soft);
+  border-color: var(--kinetic-accent-interactive-soft);
+}
+
+/* Permission row */
+.k-permission {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: var(--kinetic-radius-md);
+  cursor: pointer;
+}
+.k-permission[data-selected='true'] { background: var(--kinetic-state-selected-subtle); }
+.k-permission:hover { background: var(--kinetic-state-hover); }
+.k-permission__body { display: flex; flex-direction: column; gap: 2px; }
+.k-permission__title { font-family: var(--kinetic-font-family-sans); font-size: var(--kinetic-font-size-s); color: var(--kinetic-text-primary); }
+.k-permission__sub { font-family: var(--kinetic-font-family-sans); font-size: var(--kinetic-font-size-meta); color: var(--kinetic-text-secondary); }
+
+/* Selection row */
+.k-selection {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: var(--kinetic-radius-md);
+  cursor: pointer;
+  color: var(--kinetic-text-primary);
+  font-family: var(--kinetic-font-family-sans);
+  font-size: var(--kinetic-font-size-s);
+}
+.k-selection[data-list='true'] { border-radius: 0; border-bottom: 1px solid var(--kinetic-lines-hairline); }
+.k-selection:hover { background: var(--kinetic-state-hover); }
+.k-selection[data-selected='true'] { background: var(--kinetic-state-selected-subtle); }
+.k-selection[data-disabled='true'] { cursor: not-allowed; color: var(--kinetic-text-disabled); }
+
+/* Reco engine list */
+.k-reco-window {
+  display: flex;
+  flex-direction: column;
+  background: var(--kinetic-bg-card);
+  border: 1px solid var(--kinetic-lines-card);
+  border-radius: var(--kinetic-radius-lg);
+  overflow: hidden;
+  font-family: var(--kinetic-font-family-sans);
+}
+.k-reco-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--kinetic-lines-hairline);
+  color: var(--kinetic-text-primary);
+  font-size: var(--kinetic-font-size-s);
+}
+.k-reco-item:last-child { border-bottom: 0; }
+.k-reco-item__title { flex: 1 1 auto; min-width: 0; }
+.k-reco-item__icon { width: 16px; height: 16px; color: var(--kinetic-icon-tertiary); flex: 0 0 auto; }
+.k-reco-item__icon--info { color: var(--kinetic-accent-interactive); }
+.k-reco-item__icon > svg { width: 100%; height: 100%; }
+.k-reco-item__new {
+  font-size: var(--kinetic-font-size-cap);
+  font-weight: var(--kinetic-font-weight-600);
+  color: var(--kinetic-accent-interactive);
+  background: var(--kinetic-overlay-ghost-pill-bg-interactive);
+  padding: 1px 6px;
+  border-radius: var(--kinetic-radius-pill);
+}

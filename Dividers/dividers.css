@@ -1,0 +1,21 @@
+/**
+ * Kinetic Dividers — token-driven. Requires tokens/kinetic-tokens.css.
+ */
+.k-divider {
+  border: 0;
+  margin: 0;
+  background: transparent;
+}
+.k-divider--horizontal {
+  width: 100%;
+  height: 0;
+  border-top: 1px solid var(--kinetic-lines-section);
+}
+.k-divider--vertical {
+  width: 0;
+  align-self: stretch;
+  min-height: 1em;
+  border-left: 1px solid var(--kinetic-lines-section);
+}
+.k-divider--muted.k-divider--horizontal { border-top-color: var(--kinetic-lines-hairline); }
+.k-divider--muted.k-divider--vertical { border-left-color: var(--kinetic-lines-hairline); }

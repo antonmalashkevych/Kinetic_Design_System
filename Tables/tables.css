@@ -1,0 +1,125 @@
+/* Kinetic Tables (Data display) — selection/hover = indigo; priority/action = brand orange */
+
+.k-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-family: var(--kinetic-font-family-sans);
+  font-size: 13px;
+  color: var(--kinetic-text-primary);
+  background: var(--kinetic-bg-card);
+  border: 1px solid color-mix(in srgb, var(--kinetic-border-default) 35%, transparent);
+  border-radius: var(--kinetic-radius-card, 8px);
+  overflow: hidden;
+}
+
+/* ---- Header ---- */
+.k-th {
+  text-align: left;
+  font-weight: 600;
+  font-size: 12px;
+  color: var(--kinetic-text-secondary);
+  background: var(--kinetic-table-head, var(--kinetic-bg-surface-subtle));
+  padding: 0 12px;
+  height: 40px;
+  white-space: nowrap;
+  border-bottom: 1px solid var(--kinetic-border-default);
+  user-select: none;
+}
+.k-th__inner { display: flex; align-items: center; gap: 6px; }
+.k-th--sortable { cursor: pointer; }
+.k-th--pinned { position: sticky; left: 0; z-index: 2; }
+.k-th__sort { color: var(--kinetic-text-tertiary); }
+.k-th--sorted .k-th__sort { color: var(--kinetic-text-primary); }
+
+/* ---- Data cell / row ---- */
+.k-td {
+  padding: 0 12px;
+  color: var(--kinetic-text-primary);
+  border-bottom: 1px solid var(--kinetic-border-subtle);
+  vertical-align: middle;
+}
+.k-td--num { font-family: var(--kinetic-font-family-mono); text-align: right; font-variant-numeric: tabular-nums; }
+
+/* density */
+.k-tr--low .k-td { height: 48px; }
+.k-tr--medium .k-td { height: 40px; }
+.k-tr--high .k-td { height: 32px; }
+
+/* zebra */
+.k-tr--even .k-td { background: var(--kinetic-table-row-even, transparent); }
+.k-tr--odd .k-td { background: var(--kinetic-table-row-odd, var(--kinetic-bg-surface-subtle)); }
+
+/* interaction — indigo */
+.k-tr--hover .k-td,
+.k-tr:hover .k-td { background: var(--kinetic-overlay-table-row-hover-interactive, var(--kinetic-state-hover)); }
+.k-tr--selected .k-td {
+  background: var(--kinetic-state-selected);
+  box-shadow: inset 3px 0 0 var(--kinetic-accent-interactive);
+}
+.k-td--pinned { position: sticky; left: 0; z-index: 1; background: var(--kinetic-table-row-even-pinned, var(--kinetic-bg-card)); }
+
+/* priority chip — brand orange semantic */
+.k-priority {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--kinetic-font-family-mono);
+  font-size: 12px;
+  color: var(--kinetic-text-primary);
+}
+.k-priority__dot { width: 12px; height: 12px; border-radius: 3px; background: var(--kinetic-brand-primary); }
+
+/* action button in cell — brand orange CTA */
+.k-td-action {
+  background: none;
+  border: none;
+  color: var(--kinetic-text-secondary);
+  cursor: pointer;
+  display: inline-flex;
+  padding: 4px;
+  border-radius: var(--kinetic-radius-sm, 6px);
+}
+.k-td-action:hover { color: var(--kinetic-text-primary); background: var(--kinetic-state-hover); }
+
+/* ---- Table filter field ---- */
+.k-tfilter {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 32px;
+  padding: 0 10px;
+  background: var(--kinetic-bg-surface-subtle);
+  border: 1px solid var(--kinetic-border-default);
+  border-radius: var(--kinetic-radius-md, 8px);
+  font-family: var(--kinetic-font-family-sans);
+  font-size: 13px;
+  color: var(--kinetic-text-primary);
+}
+.k-tfilter--hover { border-color: var(--kinetic-border-active); }
+.k-tfilter--focus,
+.k-tfilter--activated { border-color: var(--kinetic-accent-interactive); }
+.k-tfilter--validation { border-color: var(--kinetic-status-danger, var(--kinetic-status-error)); }
+
+/* ---- Card grid ---- */
+.k-card-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  background: color-mix(in srgb, var(--kinetic-border-default) 20%, transparent);
+  border: 1px solid color-mix(in srgb, var(--kinetic-border-default) 35%, transparent);
+  border-radius: var(--kinetic-radius-card, 8px);
+  overflow: hidden;
+  font-family: var(--kinetic-font-family-sans);
+}
+.k-card-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  background: var(--kinetic-bg-card);
+  font-size: 13px;
+  color: var(--kinetic-text-primary);
+}
+.k-card-row--even { background: var(--kinetic-bg-card); }
+.k-card-row--odd { background: var(--kinetic-bg-surface-subtle); }

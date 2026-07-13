@@ -1,0 +1,111 @@
+/**
+ * Kinetic Tabs — token-driven. Requires tokens/kinetic-tokens.css.
+ * Active states use brand/primary (orange) per design.
+ */
+/* Underline tabs */
+.k-tabs { display: inline-flex; gap: 4px; border-bottom: 1px solid var(--kinetic-lines-card); font-family: var(--kinetic-font-family-sans); }
+.k-tab {
+  padding: 8px 12px;
+  background: transparent;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  color: var(--kinetic-text-muted);
+  font-family: inherit;
+  font-size: var(--kinetic-font-size-s);
+  font-weight: var(--kinetic-font-weight-600);
+  cursor: pointer;
+  transition: color 120ms ease, border-color 120ms ease;
+}
+.k-tab:hover { color: var(--kinetic-text-secondary); }
+.k-tab[data-active='true'] { color: var(--kinetic-text-primary); border-bottom-color: var(--kinetic-brand-primary); }
+.k-tab:focus-visible { outline: none; box-shadow: 0 0 0 3px var(--kinetic-overlay-select-border-hover-brand); }
+.k-tab:disabled { color: var(--kinetic-text-disabled); cursor: not-allowed; }
+
+/* Segmented control */
+.k-segmented-control {
+  display: inline-flex;
+  gap: 6px;
+  padding: 0;
+  background: transparent;
+  border-radius: var(--kinetic-radius-input);
+  font-family: var(--kinetic-font-family-sans);
+}
+/* Inactive segments are dark, so they carry a subtle border to read on dark (matches secondary buttons) */
+.k-segment {
+  border: 1px solid color-mix(in srgb, var(--kinetic-border-default) 40%, transparent);
+  background: var(--kinetic-bg-surface-subtle);
+  color: var(--kinetic-text-secondary);
+  font-family: inherit;
+  font-size: var(--kinetic-font-size-s);
+  font-weight: var(--kinetic-font-weight-600);
+  padding: 6px 12px;
+  border-radius: var(--kinetic-radius-sm);
+  cursor: pointer;
+  transition: background-color 120ms ease, color 120ms ease, border-color 120ms ease;
+}
+.k-segment:hover {
+  background: var(--kinetic-bg-surface-muted);
+  border-color: color-mix(in srgb, var(--kinetic-border-default) 60%, transparent);
+}
+.k-segment[data-active='true'] {
+  background: var(--kinetic-brand-primary);
+  color: var(--kinetic-neutral-white);
+  border-color: transparent;
+}
+/* Rounded / outline / ghost keep their own (non-filled) treatments */
+.k-segment--rounded { border-radius: var(--kinetic-radius-lg); background: transparent; border-color: transparent; }
+.k-segment--rounded:hover { background: var(--kinetic-state-hover); border-color: transparent; }
+.k-segment--outline { border-radius: var(--kinetic-radius-md); background: transparent; border-color: var(--kinetic-lines-section); }
+.k-segment--outline:hover { background: transparent; }
+.k-segment--ghost { background: transparent; border-color: transparent; }
+.k-segment--ghost:hover { background: var(--kinetic-state-hover); border-color: transparent; }
+.k-segment--rounded[data-active='true'],
+.k-segment--outline[data-active='true'] { background: var(--kinetic-brand-primary); color: var(--kinetic-neutral-white); border-color: transparent; }
+.k-segment--ghost[data-active='true'] {
+  background: transparent;
+  color: var(--kinetic-brand-primary);
+  border-color: var(--kinetic-brand-primary);
+}
+.k-segment:disabled { color: var(--kinetic-text-disabled); cursor: not-allowed; }
+.k-segment__tag {
+  margin-left: 6px; font-size: var(--kinetic-font-size-cap); padding: 0 5px; border-radius: var(--kinetic-radius-pill);
+  background: var(--kinetic-overlay-ghost-pill-bg-brand); color: var(--kinetic-brand-primary);
+}
+
+/* KPI segments */
+.k-kpi-segments { display: inline-flex; border: 1px solid var(--kinetic-lines-card); border-radius: var(--kinetic-radius-md); overflow: hidden; font-family: var(--kinetic-font-family-sans); }
+.k-kpi-segment {
+  display: flex; flex-direction: column; gap: 2px;
+  padding: 10px 14px;
+  border-right: 1px solid var(--kinetic-lines-hairline);
+  cursor: pointer;
+  background: transparent;
+}
+.k-kpi-segment:last-child { border-right: 0; }
+.k-kpi-segment[data-selected='true'] { background: var(--kinetic-overlay-ghost-pill-bg-brand); }
+.k-kpi-segment__label { font-size: var(--kinetic-font-size-meta); color: var(--kinetic-text-muted); }
+.k-kpi-segment__value {
+  font-family: var(--kinetic-font-family-mono);
+  font-variant-numeric: tabular-nums;
+  font-size: var(--kinetic-font-size-md);
+  font-weight: var(--kinetic-font-weight-600);
+  color: var(--kinetic-text-primary);
+}
+.k-kpi-segment__value--positive { color: var(--kinetic-rating-positive); }
+.k-kpi-segment__value--bad { color: var(--kinetic-rating-negative); }
+.k-kpi-segment[data-selected='true'] .k-kpi-segment__value { color: var(--kinetic-brand-primary); }
+
+/* Top bar tab */
+.k-top-bar-tab {
+  padding: 8px 12px;
+  border-radius: var(--kinetic-radius-md);
+  color: var(--kinetic-text-secondary);
+  font-family: var(--kinetic-font-family-sans);
+  font-size: var(--kinetic-font-size-s);
+  font-weight: var(--kinetic-font-weight-600);
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+.k-top-bar-tab:hover { background: var(--kinetic-state-hover); }
+.k-top-bar-tab[data-active='true'] { background: var(--kinetic-overlay-filter-bar-border-interactive); color: var(--kinetic-text-primary); }

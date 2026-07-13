@@ -1,0 +1,39 @@
+/**
+ * Kinetic Headers — token-driven. Requires tokens/kinetic-tokens.css.
+ * Two styles: plain (solid surface) and gradient (decorative).
+ */
+.k-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 20px;
+  color: var(--kinetic-text-primary);
+  font-family: var(--kinetic-font-family-sans);
+  box-sizing: border-box;
+  width: 100%;
+}
+.k-header--plain { background: var(--kinetic-bg-page); }
+.k-header--plain-card { background: var(--kinetic-bg-card); }
+/* Gradient style — token-aligned interactive gradient by default; override with --k-header-gradient */
+.k-header--gradient {
+  background: var(--k-header-gradient,
+    linear-gradient(120deg, var(--kinetic-accent-secondary), var(--kinetic-deprecated-blue) 55%, var(--kinetic-accent-interactive)));
+}
+.k-header__lead { display: inline-flex; align-items: center; gap: 10px; min-width: 0; }
+.k-header__titles { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.k-header__title {
+  font-size: var(--kinetic-font-size-lg);
+  font-weight: var(--kinetic-font-weight-600);
+  line-height: 1.2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.k-header__subtitle { font-size: var(--kinetic-font-size-s); color: var(--kinetic-text-secondary); }
+.k-header--gradient .k-header__subtitle { color: var(--kinetic-text-primary); opacity: 0.85; }
+.k-header__actions { display: inline-flex; align-items: center; gap: 8px; flex: 0 0 auto; }
+.k-header__icon { width: 20px; height: 20px; display: inline-flex; color: var(--kinetic-icon-secondary); flex: 0 0 auto; }
+.k-header--gradient .k-header__icon,
+.k-header--gradient .k-header__title { color: var(--kinetic-neutral-white); }
+.k-header__icon > svg { width: 100%; height: 100%; }

@@ -1,0 +1,207 @@
+/**
+ * Kinetic Buttons — token-driven styles.
+ * Requires tokens/kinetic-tokens.css to be loaded at the app root.
+ * States: rest / :hover / :focus-visible / [disabled] / [data-active] mirror the
+ * Figma variants (Regular / Hover / Focus / Disabled / Activated).
+ */
+
+/* ============================ shared ============================ */
+.k-btn,
+.k-icon-btn,
+.k-text-btn,
+.k-outline-btn,
+.k-filter-btn,
+.k-ana-btn {
+  --k-focus-ring: var(--kinetic-overlay-select-border-hover-brand);
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--kinetic-font-family-sans);
+  font-weight: var(--kinetic-font-weight-600);
+  font-size: var(--kinetic-font-size-sm);
+  line-height: 1.2;
+  border: 1px solid transparent;
+  border-radius: var(--kinetic-radius-input);
+  cursor: pointer;
+  transition: background-color 120ms ease, color 120ms ease, border-color 120ms ease,
+    box-shadow 120ms ease, filter 120ms ease;
+  -webkit-font-smoothing: antialiased;
+}
+
+.k-btn:focus-visible,
+.k-icon-btn:focus-visible,
+.k-text-btn:focus-visible,
+.k-outline-btn:focus-visible,
+.k-filter-btn:focus-visible,
+.k-ana-btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px var(--k-focus-ring);
+}
+
+.k-btn__icon,
+.k-icon-btn__icon,
+.k-outline-btn__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+}
+.k-btn__icon > svg,
+.k-icon-btn__icon > svg,
+.k-outline-btn__icon > svg { width: 100%; height: 100%; }
+.k-btn__chevron { width: 16px; height: 16px; margin-left: 2px; opacity: 0.9; }
+
+/* ====================== Button (General) ======================= */
+.k-btn { gap: 8px; }
+.k-btn--normal { padding: 8px 16px; }
+.k-btn--small { padding: 6px 12px; font-size: var(--kinetic-font-size-s); }
+.k-btn--wider { padding: 8px 32px; }
+
+.k-btn--primary { background: var(--kinetic-brand-primary); color: var(--kinetic-neutral-white); }
+.k-btn--primary:hover { background: color-mix(in srgb, var(--kinetic-brand-primary) 90%, #000); }
+.k-btn--primary[data-active="true"] { background: color-mix(in srgb, var(--kinetic-brand-primary) 82%, #000); }
+.k-btn--primary:disabled,
+.k-btn--primary[aria-disabled="true"] { background: var(--kinetic-brand-primary-soft); cursor: not-allowed; }
+
+/* Secondary (dark) — needs a visible border to read on dark surfaces */
+.k-btn--secondary {
+  background: var(--kinetic-bg-surface-subtle);
+  color: var(--kinetic-text-primary);
+  border: 1px solid color-mix(in srgb, var(--kinetic-border-default) 40%, transparent);
+}
+.k-btn--secondary:hover {
+  background: var(--kinetic-bg-surface-muted);
+  border-color: color-mix(in srgb, var(--kinetic-border-default) 60%, transparent);
+}
+.k-btn--secondary[data-active="true"] {
+  background: var(--kinetic-bg-surface-muted);
+  border-color: color-mix(in srgb, var(--kinetic-border-default) 60%, transparent);
+}
+.k-btn--secondary:disabled,
+.k-btn--secondary[aria-disabled="true"] {
+  color: var(--kinetic-text-muted);
+  border-color: color-mix(in srgb, var(--kinetic-border-default) 20%, transparent);
+  cursor: not-allowed;
+}
+
+.k-btn--secondary2 { background: var(--kinetic-accent-interactive); color: var(--kinetic-neutral-white); }
+.k-btn--secondary2:hover { background: color-mix(in srgb, var(--kinetic-accent-interactive) 90%, #000); }
+.k-btn--secondary2[data-active="true"] { background: color-mix(in srgb, var(--kinetic-accent-interactive) 82%, #000); }
+.k-btn--secondary2:disabled,
+.k-btn--secondary2[aria-disabled="true"] { background: var(--kinetic-accent-indigo-cta-2); color: var(--kinetic-text-secondary); cursor: not-allowed; }
+
+/* ===================== IconButton ============================== */
+.k-icon-btn { padding: 0; }
+.k-icon-btn--medium { width: 40px; height: 40px; }
+.k-icon-btn--small { width: 32px; height: 32px; }
+.k-icon-btn--round { border-radius: 999px; }
+.k-icon-btn--rectangle { border-radius: var(--kinetic-radius-input); }
+.k-icon-btn__icon { width: 20px; height: 20px; color: var(--kinetic-neutral-white); }
+.k-icon-btn--small .k-icon-btn__icon { width: 16px; height: 16px; }
+
+.k-icon-btn--primary { background: var(--kinetic-brand-primary); }
+.k-icon-btn--primary:hover { background: color-mix(in srgb, var(--kinetic-brand-primary) 90%, #000); }
+.k-icon-btn--primary:disabled { background: var(--kinetic-brand-primary-soft); cursor: not-allowed; }
+
+.k-icon-btn--secondary { background: var(--kinetic-bg-card); }
+.k-icon-btn--secondary:hover { background: color-mix(in srgb, var(--kinetic-bg-card), var(--kinetic-neutral-white) 6%); }
+.k-icon-btn--secondary:disabled { cursor: not-allowed; opacity: 0.6; }
+
+.k-icon-btn--button { background: var(--kinetic-brand-primary); }
+.k-icon-btn--button:hover { background: color-mix(in srgb, var(--kinetic-brand-primary) 90%, #000); }
+.k-icon-btn--button:disabled { background: var(--kinetic-brand-primary-soft); cursor: not-allowed; }
+/* ghost (Fill=False): transparent surface, brand icon wash on hover */
+.k-icon-btn--button[data-fill="false"] { background: transparent; }
+.k-icon-btn--button[data-fill="false"]:hover { background: var(--kinetic-overlay-table-row-hover-brand); }
+
+/* ===================== TextButton ============================== */
+.k-text-btn {
+  gap: 6px;
+  padding: 4px 6px;
+  background: transparent;
+  color: var(--kinetic-text-primary);
+  border-radius: var(--kinetic-radius-xs);
+}
+.k-text-btn:hover { color: var(--kinetic-brand-primary); }
+.k-text-btn[data-active="true"] { color: var(--kinetic-brand-primary); }
+.k-text-btn:disabled { color: var(--kinetic-text-muted); cursor: not-allowed; }
+
+/* ============== AdditionalIconButton (Solid / Gradient) ======== */
+.k-add-btn {
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  border-radius: var(--kinetic-radius-input);
+  cursor: pointer;
+  color: var(--kinetic-neutral-white);
+  transition: background-color 120ms ease, box-shadow 120ms ease, filter 120ms ease;
+}
+.k-add-btn:focus-visible { outline: none; box-shadow: 0 0 0 4px var(--kinetic-overlay-select-border-hover-brand); }
+.k-add-btn__icon { width: 18px; height: 18px; display: inline-flex; }
+.k-add-btn__icon > svg { width: 100%; height: 100%; }
+.k-add-btn--solid { background: var(--kinetic-overlay-ghost-pill-bg-interactive); }
+.k-add-btn--solid:hover { background: color-mix(in srgb, var(--kinetic-overlay-ghost-pill-bg-interactive), var(--kinetic-neutral-white) 6%); }
+.k-add-btn--gradient {
+  background: linear-gradient(135deg, var(--kinetic-brand-primary), color-mix(in srgb, var(--kinetic-brand-primary) 70%, var(--kinetic-accent-interactive)));
+}
+.k-add-btn--gradient:hover { filter: brightness(0.95); }
+.k-add-btn:disabled { cursor: not-allowed; opacity: 0.55; }
+
+/* ===================== OutlineButton =========================== */
+.k-outline-btn {
+  gap: 8px;
+  padding: 8px 16px;
+  background: transparent;
+  color: var(--kinetic-text-primary);
+  border: 1px solid var(--kinetic-lines-section);
+}
+.k-outline-btn--icon { padding: 8px; width: 40px; height: 40px; }
+.k-outline-btn--icon .k-outline-btn__icon { color: var(--kinetic-icon-primary); }
+.k-outline-btn:hover { border-color: var(--kinetic-overlay-select-border-hover-brand); }
+.k-outline-btn[data-active="true"] { border-color: var(--kinetic-brand-primary); color: var(--kinetic-brand-primary); }
+.k-outline-btn[data-active="true"] .k-outline-btn__icon { color: var(--kinetic-brand-primary); }
+.k-outline-btn:disabled { border-color: var(--kinetic-lines-card); color: var(--kinetic-text-muted); cursor: not-allowed; }
+.k-outline-btn:disabled .k-outline-btn__icon { color: var(--kinetic-text-muted); }
+
+/* ===================== FilterButton ============================ */
+.k-filter-btn {
+  gap: 8px;
+  padding: 8px 14px;
+  background: var(--kinetic-overlay-table-row-hover-interactive);
+  color: var(--kinetic-text-primary);
+  border: 1px solid var(--kinetic-lines-section);
+}
+.k-filter-btn:hover { border-color: var(--kinetic-overlay-select-border-hover-interactive); }
+.k-filter-btn[data-active="true"] { background: var(--kinetic-brand-primary); color: var(--kinetic-neutral-white); border-color: transparent; }
+.k-filter-btn[data-selected="true"] { background: var(--kinetic-overlay-guide-example-bg); color: var(--kinetic-brand-primary); border-color: var(--kinetic-brand-primary); }
+.k-filter-btn:disabled { color: var(--kinetic-text-muted); cursor: not-allowed; }
+.k-filter-btn__tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  border-radius: var(--kinetic-radius-pill);
+  background: var(--kinetic-overlay-ghost-pill-bg-interactive);
+  font-size: var(--kinetic-font-size-cap);
+  font-weight: var(--kinetic-font-weight-600);
+}
+
+/* ===================== AnaButton (legacy/review) =============== */
+.k-ana-btn {
+  gap: 8px;
+  padding: 8px 16px;
+  background: transparent;
+  color: var(--kinetic-text-primary);
+  border: 1px solid var(--kinetic-lines-section);
+  border-radius: var(--kinetic-radius-lg);
+}
+.k-ana-btn[data-active="true"] { border-color: var(--kinetic-lines-section); background: var(--kinetic-state-selected-grey); }
+.k-ana-btn:disabled { border-color: var(--kinetic-lines-hairline); color: var(--kinetic-text-muted); cursor: not-allowed; }

@@ -1,0 +1,57 @@
+/* Kinetic Cards (Layouts) */
+
+.k-card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 14px 16px;
+  background: var(--kinetic-bg-card);
+  border: 1px solid var(--kinetic-border-subtle);
+  border-radius: var(--kinetic-radius-card, 8px);
+  font-family: var(--kinetic-font-family-sans);
+  color: var(--kinetic-text-primary);
+}
+.k-card--hoverable { cursor: pointer; transition: background 0.12s ease, border-color 0.12s ease; }
+.k-card--hoverable:hover,
+.k-card--hover { background: var(--kinetic-bg-surface-subtle); border-color: var(--kinetic-border-default); }
+
+.k-card__row { display: flex; align-items: flex-start; gap: 12px; }
+.k-card__main { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.k-card__title { font-size: 14px; font-weight: 600; color: var(--kinetic-text-primary); }
+.k-card__subtitle { font-size: 13px; color: var(--kinetic-text-secondary); }
+.k-card__action { flex-shrink: 0; display: inline-flex; align-items: center; gap: 6px; }
+.k-card__meta { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: var(--kinetic-text-tertiary); margin-top: 4px; }
+.k-card__chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+
+/* ---- User card ---- */
+.k-user-card { display: flex; align-items: center; gap: 12px; padding: 12px 16px; }
+.k-user-card__avatar {
+  width: 32px; height: 32px; border-radius: 50%; flex-shrink: 0;
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--kinetic-brand-primary); color: var(--kinetic-neutral-white);
+  font-weight: 600; font-size: 13px;
+}
+.k-user-card__body { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.k-user-card__name { font-size: 14px; font-weight: 600; }
+.k-user-card__email { font-size: 12px; color: var(--kinetic-text-tertiary); }
+.k-user-card__status {
+  flex-shrink: 0; padding: 3px 10px; border-radius: 999px;
+  font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .02em;
+}
+.k-user-card__status--active { background: color-mix(in srgb, var(--kinetic-semantic-success) 20%, transparent); color: var(--kinetic-semantic-success); }
+.k-user-card__status--pending { background: color-mix(in srgb, var(--kinetic-status-warning) 22%, transparent); color: var(--kinetic-status-warning); }
+.k-user-card__status--inactive { background: var(--kinetic-state-hover); color: var(--kinetic-text-tertiary); }
+
+/* ---- Rec Engine action card ---- */
+.k-rec-card {
+  display: flex; flex-direction: column; gap: 12px;
+  padding: 14px 16px; border-radius: var(--kinetic-radius-card, 8px);
+  background: var(--kinetic-bg-surface-subtle);
+  border: 1px solid var(--kinetic-border-subtle);
+  font-family: var(--kinetic-font-family-sans); color: var(--kinetic-text-primary);
+}
+.k-rec-card__msg { font-size: 13px; line-height: 1.5; }
+.k-rec-card__actions { display: flex; gap: 8px; }
+.k-rec-btn { font-family: inherit; font-size: 13px; font-weight: 600; padding: 6px 14px; border-radius: var(--kinetic-radius-input, 6px); cursor: pointer; border: 1px solid transparent; }
+.k-rec-btn--save { background: var(--kinetic-gradient-action-primary, var(--kinetic-brand-primary)); color: var(--kinetic-neutral-white); }
+.k-rec-btn--cancel { background: transparent; color: var(--kinetic-text-secondary); border-color: var(--kinetic-border-default); }

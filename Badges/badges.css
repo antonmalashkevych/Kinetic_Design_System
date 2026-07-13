@@ -1,0 +1,101 @@
+/**
+ * Kinetic Badges — token-driven styles. Requires tokens/kinetic-tokens.css.
+ */
+.k-badge-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--kinetic-neutral-white);
+  flex: 0 0 auto;
+}
+.k-badge-dot--success { background: var(--kinetic-semantic-success); }
+.k-badge-dot--warning { background: var(--kinetic-semantic-warning); }
+.k-badge-dot--error { background: var(--kinetic-semantic-error); }
+.k-badge-dot--brand { background: var(--kinetic-brand-primary); }
+.k-badge-dot--interactive { background: var(--kinetic-accent-interactive); }
+
+/* Status pill */
+.k-status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 12px;
+  border-radius: var(--kinetic-radius-xl);
+  font-family: var(--kinetic-font-family-sans);
+  font-weight: var(--kinetic-font-weight-600);
+  font-size: var(--kinetic-font-size-meta);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--kinetic-neutral-white);
+}
+.k-status--active { background: var(--kinetic-semantic-success); }
+.k-status--inactive { background: var(--kinetic-semantic-error); }
+.k-status--pending { background: var(--kinetic-semantic-warning); }
+
+/* Tag */
+.k-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 4px;
+  border-radius: var(--kinetic-radius-sm);
+  font-family: var(--kinetic-font-family-sans);
+  font-weight: var(--kinetic-font-weight-600);
+  font-size: var(--kinetic-font-size-meta);
+}
+.k-tag--grey { background: var(--kinetic-bg-surface-emphasis); color: var(--kinetic-text-primary); }
+.k-tag--brand { background: var(--kinetic-brand-primary); color: var(--kinetic-neutral-white); }
+
+/* Chip */
+.k-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 6px;
+  border-radius: var(--kinetic-radius-sm);
+  border: 1px solid transparent;
+  font-family: var(--kinetic-font-family-sans);
+  font-weight: var(--kinetic-font-weight-600);
+  font-size: var(--kinetic-font-size-meta);
+}
+.k-chip--default {
+  background: var(--kinetic-bg-card);
+  border-color: var(--kinetic-lines-section);
+  color: var(--kinetic-text-secondary);
+}
+.k-chip--highlighted {
+  background: var(--kinetic-overlay-ghost-pill-bg-brand);
+  border-color: var(--kinetic-brand-primary);
+  color: var(--kinetic-brand-primary);
+}
+
+/* Filter badge (removable) */
+.k-filter-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 12px;
+  height: 26px;
+  border-radius: var(--kinetic-radius-xl);
+  background: var(--kinetic-brand-primary);
+  color: var(--kinetic-neutral-white);
+  font-family: var(--kinetic-font-family-sans);
+  font-weight: var(--kinetic-font-weight-600);
+  font-size: var(--kinetic-font-size-meta);
+}
+.k-filter-badge__remove {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: currentColor;
+  cursor: pointer;
+  opacity: 0.85;
+}
+.k-filter-badge__remove:hover { opacity: 1; }
+.k-filter-badge__remove > svg { width: 100%; height: 100%; }
